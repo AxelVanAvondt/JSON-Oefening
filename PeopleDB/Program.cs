@@ -28,20 +28,36 @@ SaveToDisk();
 void SetGroupName()
 {
     // TODO: vraag om een groepsnaam en wijs die toe aan de groep
+    Console.WriteLine("Geef een groepsnaam: ");
+    group.Name = Console.ReadLine();
 }
 
 void AddPerson()
 {
     Person person = new Person();
-    
-    // TODO: vraag naam, leeftijd, en hobbies en wijs die toe aan de persoon
 
+    // TODO: vraag naam, leeftijd, en hobbies en wijs die toe aan de persoon
+    Console.WriteLine("Naam: ");
+    person.Name = Console.ReadLine();
+    Console.WriteLine("Leeftijd: ");
+    person.Age = Console.Read();
+    Console.WriteLine("Hobbies: ");
+    for (int i = 0; i < person.Hobbys.Count + 1; i++)
+    {
+        string hobby = Console.ReadLine();
+        person.Hobbys.Add(hobby);
+        if (hobby == "")
+        {
+            person.Hobbys.Remove(hobby);
+        }
+    }
     group.People.Add(person);
 }
 
 void ShowMembers()
 {
     // TODO: toon de naam van de groep, en info over alle leden
+    
 }
 
 void SaveToDisk()
